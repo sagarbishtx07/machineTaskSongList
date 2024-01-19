@@ -2,9 +2,11 @@ package com.example.machinetesttask.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.example.machinetesttask.R
 import com.example.machinetesttask.databinding.ItemArtistLayoutBinding
 import com.example.machinetesttask.model.Artist
 
@@ -25,7 +27,8 @@ class ArtistAdapter : RecyclerView.Adapter<ArtistAdapter.ArtistViewHolder>() {
 
     val differ = AsyncListDiffer(this, diffCallback)
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ArtistViewHolder {
-        val binding = ItemArtistLayoutBinding.inflate(LayoutInflater.from(parent.context),parent,false)
+        val binding:ItemArtistLayoutBinding = DataBindingUtil.inflate(LayoutInflater.from(parent.context),
+            R.layout.item_artist_layout,parent,false)
         return ArtistViewHolder(binding)
     }
 
@@ -36,7 +39,7 @@ class ArtistAdapter : RecyclerView.Adapter<ArtistAdapter.ArtistViewHolder>() {
     override fun onBindViewHolder(holder: ArtistViewHolder, position: Int) {
         val item = differ.currentList[position]
         holder.binding.apply {
-            tvArtistName.text = item.name
+            artistitem = item
         }
     }
 }

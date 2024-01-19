@@ -1,76 +1,87 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:layout_width="match_parent"
-    android:padding="10dp"
-    app:cardCornerRadius="16dp"
-    android:layout_margin="4dp"
-    android:layout_height="wrap_content">
-<LinearLayout
-    android:orientation="horizontal"
-    android:layout_width="match_parent"
-    android:padding="10dp"
-    android:gravity="center"
-    android:background="@color/light_gray"
-    android:layout_height="wrap_content">
-    <ImageView
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginVertical="3dp"
-        android:layout_marginHorizontal="8dp"
-        android:src="@drawable/music"
-        />
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:gravity="center"
-    android:layout_weight="1"
-    android:orientation="vertical">
+    <data>
+        <variable
+            name="songitem"
+            type="com.example.machinetesttask.model.Item" />
+    </data>
 
-    <TextView
-        android:id="@+id/tvName"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Song Name"
-        android:textSize="14dp"
-        android:fontFamily="@font/poppins_medium"
-        android:layout_margin="3dp"
-        android:textColor="@color/white" />
-    <TextView
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tvPreview_Url"
-        android:text="Artists : "
-        android:textSize="12dp"
-        android:fontFamily="@font/poppins_medium"
-        android:layout_marginHorizontal="3dp"
-        android:layout_marginTop="5dp"
-        android:layout_marginBottom="3dp"
-        android:textColor="@color/artists"
-        />
+        android:layout_margin="4dp"
+        android:orientation="vertical"
+        android:padding="10dp"
+        app:cardCornerRadius="16dp">
 
-<androidx.recyclerview.widget.RecyclerView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:id="@+id/rvTrack"
-    />
-</LinearLayout>
-    <ImageView
-        android:layout_width="40dp"
-        android:id="@+id/play"
-        android:layout_height="40dp"
-        android:layout_margin="5dp"
-        android:src="@drawable/baseline_play_arrow_24"
-        app:tint="@color/artists" />
-    <ImageView
-        android:layout_width="40dp"
-        android:id="@+id/pause"
-        android:layout_height="40dp"
-        android:visibility="gone"
-        android:layout_margin="5dp"
-        android:src="@drawable/baseline_pause_24"
-        app:tint="@color/artists" />
-</LinearLayout>
-</androidx.cardview.widget.CardView>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/light_gray"
+            android:gravity="center"
+            android:orientation="horizontal"
+            android:padding="10dp">
+
+            <ImageView
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_marginHorizontal="8dp"
+                android:layout_marginVertical="3dp"
+                android:src="@drawable/music" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tvName"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_margin="3dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="@{songitem.name}"
+                    android:textColor="@color/white"
+                    android:textSize="14dp" />
+
+                <TextView
+                    android:id="@+id/tvPreview_Url"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginHorizontal="3dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_marginBottom="3dp"
+                    android:fontFamily="@font/poppins_medium"
+                    android:text="Artists : "
+                    android:textColor="@color/artists"
+                    android:textSize="12dp" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rvTrack"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/play"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="5dp"
+                android:src="@drawable/baseline_play_arrow_24"
+                app:tint="@color/artists" />
+
+            <ImageView
+                android:id="@+id/pause"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_margin="5dp"
+                android:src="@drawable/baseline_pause_24"
+                android:visibility="gone"
+                app:tint="@color/artists" />
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

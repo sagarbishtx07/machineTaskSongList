@@ -6,10 +6,12 @@ import android.media.MediaPlayer
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.AsyncListDiffer
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.machinetesttask.R
 import com.example.machinetesttask.databinding.ItemSongLayoutBinding
 import com.example.machinetesttask.model.Item
 import java.io.IOException
@@ -32,8 +34,13 @@ class TrackItemAdapter : RecyclerView.Adapter<TrackItemAdapter.SongViewHolder>()
     val differ = AsyncListDiffer(this, differCallback)
     private var currentPlayingPosition: Int? = null
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): SongViewHolder {
-        val binding =
-            ItemSongLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        val binding: ItemSongLayoutBinding =
+            DataBindingUtil.inflate(
+                LayoutInflater.from(parent.context),
+                R.layout.item_song_layout,
+                parent,
+                false
+            )
         return SongViewHolder(binding)
     }
 
@@ -41,15 +48,18 @@ class TrackItemAdapter : RecyclerView.Adapter<TrackItemAdapter.SongViewHolder>()
         return differ.currentList.size
     }
 
-    override fun onBindViewHolder(holder: SongViewHolder, @SuppressLint("RecyclerView") position: Int) {
+    override fun onBindViewHolder(
+        holder: SongViewHolder,
+        @SuppressLint("RecyclerView") position: Int
+    ) {
         mediaPlayer?.release()
         mediaPlayer = null
         val holderBinding = holder.binding
         val item = differ.currentList[position]
         val artistAdapter = ArtistAdapter()
         holderBinding.apply {
+            songitem = item
 
-            tvName.text = item.name
             artistAdapter.differ.submitList(item.artists)
             rvTrack.adapter = artistAdapter
             rvTrack.layoutManager = LinearLayoutManager(root.context)
@@ -86,10 +96,11 @@ class TrackItemAdapter : RecyclerView.Adapter<TrackItemAdapter.SongViewHolder>()
             pause.setOnClickListener {
                 play.visibility = View.VISIBLE
                 pause.visibility = View.GONE
-               stopMediaPlayer()
+                stopMediaPlayer()
             }
         }
     }
+
     private fun stopMediaPlayer() {
         mediaPlayer?.stop()
         mediaPlayer?.reset()
