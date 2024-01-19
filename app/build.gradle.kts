@@ -80,4 +80,5 @@ dependencies {
     implementation ("com.squareup.okhttp3:logging-interceptor:4.11.0")
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
     implementation ("com.google.code.gson:gson:2.8.8")
+    implementation ("androidx.cardview:cardview:1.0.0")
 }
