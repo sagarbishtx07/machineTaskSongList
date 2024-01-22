@@ -5,7 +5,7 @@
     <data>
         <variable
             name="songitem"
-            type="com.example.machinetesttask.model.Item" />
+            type="com.example.machinetesttask.task1.model.Item" />
     </data>
 
     <androidx.cardview.widget.CardView

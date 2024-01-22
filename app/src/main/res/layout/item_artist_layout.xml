@@ -4,7 +4,7 @@
     <data>
 <variable
     name="artistitem"
-    type="com.example.machinetesttask.model.Artist" />
+    type="com.example.machinetesttask.task1.model.Artist" />
     </data>
 
     <LinearLayout

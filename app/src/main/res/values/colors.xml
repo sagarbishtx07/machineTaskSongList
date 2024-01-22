@@ -10,4 +10,14 @@
     <color name="black">#FF000000</color>
     <color name="light_gray">#2B2B2E</color>
     <color name="white">#FFFFFFFF</color>
+    
+    <color name="task2bg">#FF0d1635</color>
+    <color name="task2card">#19223f</color>
+    <color name="task2btn">#006bff</color>
+    <color name="task2tint">#C1BBBB</color>
+    <color name="lightgray">#EFEDED</color>
+    <color name="task2tintblue">#72A3E2</color>
+    <color name="task2green">#128807</color>
+    <color name="task2red">#DE3831</color>
+    <color name="adyellow">#FFCC64</color>
 </resources>
