@@ -1,3 +1,4 @@
+package com.example.machinetesttask.task2.model
 data class MatchItemModel(
     val id: Int,
     val dateTime: String,

@@ -1,7 +1,8 @@
 package com.example.machinetesttask.task2.ui
 
-import MatchItemModel
 import androidx.appcompat.app.AppCompatActivity
+import com.example.machinetesttask.task2.model.MatchItemModel
+
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.machinetesttask.R
@@ -15,7 +16,7 @@ class MainActivity2 : AppCompatActivity() {
         binding = ActivityMain2Binding.inflate(layoutInflater)
         setContentView(binding.root)
 
-        val matchAdapter = MatchAdapter()
+        val matchAdapter = MatchAdapter(this)
         val matchItemList: ArrayList<MatchItemModel> = ArrayList()
         for (i in 1..4) {
             matchItemList.add(

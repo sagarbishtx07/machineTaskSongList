@@ -4,6 +4,7 @@
     android:layout_height="wrap_content"
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:background="@drawable/hollow_rect"
+    android:layout_margin="5dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
     android:padding="5dp">
@@ -56,21 +57,24 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:padding="10dp"
             android:layout_weight="1"
             android:gravity="right"
+            android:background="@drawable/shapetrapleft"
+            android:backgroundTint="@color/gradmainlight"
             android:orientation="vertical">
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/arimo_bold"
                 android:gravity="center"
                 android:text="0 - 0"
                 android:textColor="@color/white"
-                android:textSize="16dp" />
+                android:textSize="18dp" />
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/arimo"
                 android:gravity="center"
@@ -86,14 +90,17 @@
             android:fontFamily="@font/arimo_bold"
             android:text="VS"
             android:layout_marginHorizontal="10dp"
-            android:textColor="@color/task2tintblue"
+            android:textColor="@color/adyellow"
             android:textSize="18dp" />
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:gravity="left"
+            android:background="@drawable/shapetrapright"
+            android:backgroundTint="@color/gradmainlight"
+            android:padding="10dp"
+            android:gravity="center"
             android:orientation="vertical">
 
             <TextView
@@ -103,7 +110,7 @@
                 android:gravity="center"
                 android:text="0 - 0"
                 android:textColor="@color/white"
-                android:textSize="16dp" />
+                android:textSize="18dp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -142,7 +149,7 @@
             android:layout_weight="1"
             android:text="INNING BREAK"
             android:textColor="@color/white"
-            android:textSize="22dp" />
+            android:textSize="24dp" />
     </LinearLayout>
     <ImageView
         android:layout_width="match_parent"

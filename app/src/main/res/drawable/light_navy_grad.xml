@@ -7,10 +7,10 @@
 <gradient
     android:startColor="@color/task2tintblue"
     android:angle="270"
-    android:endColor="@color/task2bg"
+    android:endColor="@color/gradmain"
     />
     <corners
-        android:radius="10dp"/>
+        android:radius="8dp"/>
 </shape>
 </item>
 </selector>

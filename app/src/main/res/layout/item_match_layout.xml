@@ -3,7 +3,9 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
-
+<variable
+    name="matchdetails"
+    type="com.example.machinetesttask.task2.model.MatchItemModel" />
     </data>
 
     <androidx.cardview.widget.CardView
@@ -11,6 +13,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="4dp"
         android:layout_marginVertical="7dp"
+        android:id="@+id/itemcard"
         app:cardCornerRadius="18dp">
 
         <LinearLayout
